@@ -6,6 +6,8 @@ import morgan from 'morgan';
 import helmet from 'helmet';
 import createError from 'http-errors';
 import routes from './routes.js';
+import userRoutes from './routes/userRoutes.js';
+import authRoutes from './routes/authRoutes.js';
 import { errorHandler, notFound } from './middlewares/error.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -25,6 +27,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use('/', routes);
+app.use('/', authRoutes);
+app.use('/users', userRoutes);
 
 app.use((req, res, next) => next(createError(404)));
 app.use(notFound);
