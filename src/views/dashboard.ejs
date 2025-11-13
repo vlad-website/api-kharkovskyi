@@ -1,0 +1,30 @@
+<% layout('layout', { title: 'Tableau de bord', user }) %>
+
+<section>
+  <h2>Tableau de bord</h2>
+  <p>Date : <%= new Date().toLocaleDateString('fr-FR') %></p>
+
+  <h3>Réservations en cours</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Catway #</th>
+        <th>Client</th>
+        <th>Bateau</th>
+        <th>Début</th>
+        <th>Fin</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% reservations.forEach(r => { %>
+        <tr>
+          <td><%= r.catwayNumber %></td>
+          <td><%= r.clientName %></td>
+          <td><%= r.boatName %></td>
+          <td><%= new Date(r.startDate).toLocaleDateString('fr-FR') %></td>
+          <td><%= new Date(r.endDate).toLocaleDateString('fr-FR') %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</section>
