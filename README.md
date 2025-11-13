@@ -7,7 +7,7 @@
 ## 🌐 Liens du projet
 
 - **Repository GitHub :** [https://github.com/vlad-website/api-kharkovskyi](https://github.com/vlad-website/api-kharkovskyi)
-- **Application hébergée :** *(à compléter si déployée)*
+- **Application hébergée :** [https://russell-marina.onrender.com](https://russell-marina.onrender.com)
 - **Documentation API (Swagger) :** [http://localhost:3000/api-docs](http://localhost:3000/api-docs)
 
 ---
