@@ -1,15 +1,29 @@
-<% layout('layout', { title: 'Documentation' }) %>
 
 <section>
   <h2>Documentation de l’API Russell Marina</h2>
-  <p>Endpoints principaux :</p>
+  <p>Bienvenue dans la documentation de l'application.</p>
+
+  <h3>Documentation interactive</h3>
+  <p>
+    Consultez la version Swagger de l'API :
+    <a href="/api-docs" target="_blank">→ Swagger UI</a>
+  </p>
+
+  <h3>Principaux endpoints</h3>
   <ul>
-    <li>GET /catways</li>
-    <li>GET /catways/:id</li>
-    <li>POST /catways</li>
-    <li>GET /catways/:id/reservations</li>
-    <li>POST /catways/:id/reservations</li>
-    <li>GET /users</li>
-    <li>POST /login</li>
+    <li><strong>POST /login</strong> — Connexion utilisateur</li>
+    <li><strong>GET /users</strong> — Liste des utilisateurs</li>
+    <li><strong>POST /users</strong> — Créer un utilisateur</li>
+    <li><strong>GET /catways</strong> — Liste des catways</li>
+    <li><strong>POST /catways</strong> — Ajouter un catway</li>
+    <li><strong>GET /catways/:id/reservations</strong> — Réservations d’un catway</li>
+    <li><strong>POST /catways/:id/reservations</strong> — Créer une réservation</li>
+  </ul>
+
+  <h3>Accès rapide</h3>
+  <ul>
+    <li><a href="/">Accueil</a></li>
+    <li><a href="/dashboard">Tableau de bord</a></li>
+    <li><a href="/api-docs">Swagger UI</a></li>
   </ul>
 </section>
