@@ -1,0 +1,79 @@
+openapi: 3.0.0
+info:
+  title: Russell Marina API
+  description: API privée de gestion du port de plaisance de Russell.
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000
+paths:
+  /login:
+    post:
+      summary: Connexion utilisateur
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: admin@example.com
+                password:
+                  type: string
+                  example: 123456
+      responses:
+        '200':
+          description: Authentifié avec succès
+  /users:
+    get:
+      summary: Liste des utilisateurs
+      responses:
+        '200':
+          description: Liste renvoyée
+    post:
+      summary: Créer un utilisateur
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '201':
+          description: Utilisateur créé
+  /catways:
+    get:
+      summary: Liste des catways
+      responses:
+        '200':
+          description: Liste renvoyée
+    post:
+      summary: Créer un catway
+      responses:
+        '201':
+          description: Catway créé
+  /catways/{id}/reservations:
+    get:
+      summary: Liste des réservations pour un catway
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Liste renvoyée
+    post:
+      summary: Créer une réservation pour un catway
+      responses:
+        '201':
+          description: Réservation créée

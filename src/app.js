@@ -14,9 +14,13 @@ import authRoutes from './routes/authRoutes.js';
 import catwayRoutes from './routes/catwayRoutes.js';
 import { errorHandler, notFound } from './middlewares/error.js';
 
+import swaggerUi from 'swagger-ui-express';
+import YAML from 'yamljs';
+
 // ---------- Пути для ESM ----------
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const swaggerDocument = YAML.load(path.join(__dirname, 'docs', 'swagger.yaml'));
 
 // ---------- Приложение ----------
 export const app = express();
@@ -39,6 +43,7 @@ app.use('/', routes);          // index, docs, dashboard
 app.use('/', authRoutes);      // login/logout
 app.use('/users', userRoutes); // CRUD users
 app.use('/catways', catwayRoutes); // catways + reservations
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // ---------- Ошибки ----------
 app.use((req, res, next) => next(createError(404)));
