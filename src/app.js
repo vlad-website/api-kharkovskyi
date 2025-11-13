@@ -9,6 +9,7 @@ import routes from './routes.js';
 import userRoutes from './routes/userRoutes.js';
 import authRoutes from './routes/authRoutes.js';
 import { errorHandler, notFound } from './middlewares/error.js';
+import catwayRoutes from './routes/catwayRoutes.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -29,6 +30,7 @@ app.set('view engine', 'ejs');
 app.use('/', routes);
 app.use('/', authRoutes);
 app.use('/users', userRoutes);
+app.use('/catways', catwayRoutes);
 
 app.use((req, res, next) => next(createError(404)));
 app.use(notFound);
