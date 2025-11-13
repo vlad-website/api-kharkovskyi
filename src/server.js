@@ -5,7 +5,7 @@ import { config } from './config.js';
 async function start() {
   try {
     await mongoose.connect(config.mongodbUri);
-    console.log('MongoDB connected');
+    console.log('MongoDB connected to DB:', mongoose.connection.name);
 
     app.listen(config.port, () => {
       console.log(`Server listening on http://localhost:${config.port}`);
