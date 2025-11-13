@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= title %> | Russell Marina</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Port de Plaisance de Russell</h1>
+    <% if (typeof user !== 'undefined' && user) { %>
+        <p>Connecté : <%= user.username %> (<%= user.email %>)</p>
+        <a href="/logout">Déconnexion</a>
+    <% } %>
+  </header>
+
+  <main>
+    <%- body %>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Russell Marina</p>
+  </footer>
+</body>
+</html>

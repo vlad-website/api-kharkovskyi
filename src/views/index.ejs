@@ -1,31 +1,17 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Russell Marina</title>
-  <link rel="stylesheet" href="/styles.css"/>
-</head>
-<body>
-  <main>
-    <section>
-      <h1>Russell Marina</h1>
-      <p>Application privée de gestion des catways & réservations.</p>
 
-      <form method="post" action="/login">
-        <div>
-          <label>Email</label>
-          <input name="email" type="email" required />
-        </div>
-        <div>
-          <label>Mot de passe</label>
-          <input name="password" type="password" required minlength="6" />
-        </div>
-        <button type="submit">Se connecter</button>
-      </form>
+<section class="home">
+  <h2>Bienvenue au Port de Plaisance de Russell</h2>
+  <p>Application de gestion privée des catways et réservations.</p>
 
-      <p><a href="/docs">Documentation API</a></p>
-    </section>
-  </main>
-</body>
-</html>
+  <form action="/login" method="POST" class="login-form">
+    <label>Email :</label>
+    <input type="email" name="email" required />
+
+    <label>Mot de passe :</label>
+    <input type="password" name="password" required minlength="6" />
+
+    <button type="submit">Se connecter</button>
+  </form>
+
+  <p><a href="/docs">→ Consulter la documentation API</a></p>
+</section>
